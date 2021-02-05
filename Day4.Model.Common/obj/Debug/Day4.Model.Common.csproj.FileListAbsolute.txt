@@ -1,0 +1,6 @@
+C:\Users\Matej\source\repos\Day4\Day4.Model.Common\bin\Debug\Day4.Model.Common.dll
+C:\Users\Matej\source\repos\Day4\Day4.Model.Common\bin\Debug\Day4.Model.Common.pdb
+C:\Users\Matej\source\repos\Day4\Day4.Model.Common\obj\Debug\Day4.Model.Common.csprojAssemblyReference.cache
+C:\Users\Matej\source\repos\Day4\Day4.Model.Common\obj\Debug\Day4.Model.Common.csproj.CoreCompileInputs.cache
+C:\Users\Matej\source\repos\Day4\Day4.Model.Common\obj\Debug\Day4.Model.Common.dll
+C:\Users\Matej\source\repos\Day4\Day4.Model.Common\obj\Debug\Day4.Model.Common.pdb

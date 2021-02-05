@@ -1,0 +1,11 @@
+C:\Users\Matej\source\repos\Day4\Day4.Service.Common\bin\Debug\Day4.Service.Common.dll
+C:\Users\Matej\source\repos\Day4\Day4.Service.Common\bin\Debug\Day4.Service.Common.pdb
+C:\Users\Matej\source\repos\Day4\Day4.Service.Common\bin\Debug\Day4.Model.Common.dll
+C:\Users\Matej\source\repos\Day4\Day4.Service.Common\bin\Debug\Day4.Model.Common.pdb
+C:\Users\Matej\source\repos\Day4\Day4.Service.Common\obj\Debug\Day4.Service.Common.csprojAssemblyReference.cache
+C:\Users\Matej\source\repos\Day4\Day4.Service.Common\obj\Debug\Day4.Service.Common.csproj.CoreCompileInputs.cache
+C:\Users\Matej\source\repos\Day4\Day4.Service.Common\obj\Debug\Day4.Service.Common.csproj.CopyComplete
+C:\Users\Matej\source\repos\Day4\Day4.Service.Common\obj\Debug\Day4.Service.Common.dll
+C:\Users\Matej\source\repos\Day4\Day4.Service.Common\obj\Debug\Day4.Service.Common.pdb
+C:\Users\Matej\source\repos\Day4\Day4.Service.Common\bin\Debug\Day4.Model.dll
+C:\Users\Matej\source\repos\Day4\Day4.Service.Common\bin\Debug\Day4.Model.pdb
