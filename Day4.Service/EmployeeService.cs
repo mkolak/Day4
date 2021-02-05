@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Day4.Service.Common;
 using Day4.Model.Common;
 using Day4.Repository.Common;
-using System.Data.SqlClient;
 using Day4.Model;
 using Day4.Repository;
 using System.Data;
@@ -17,9 +16,10 @@ namespace Day4.Service
     {
         static IEmployeeRepository Repository = new EmployeeRepository();
 
-        public List<IEmployee> GetEmployees()
+        public async Task<List<IEmployee>> GetEmployeesAsync()
         {
-            DataSet employees = Repository.QueryAll(); 
+            Task<DataSet> dataSetTask = Repository.QueryAllAsync();
+            DataSet employees = await dataSetTask;
             List<IEmployee> retVal = new List<IEmployee>();
             foreach (DataRow pRow in employees.Tables[0].Rows) {
                 retVal.Add(new Employee()
@@ -33,9 +33,10 @@ namespace Day4.Service
             return retVal;
         }
 
-        public List<IEmployee> GetEmployeesByValue(string field, string value)
+        public async Task<List<IEmployee>> GetEmployeesByValueAsync(string field, string value)
         {
-            DataSet employees = Repository.QueryByStringValue(field, value);
+            Task<DataSet> dataSetTask = Repository.QueryByStringValueAsync(field, value);
+            DataSet employees = await dataSetTask;
             List<IEmployee> retVal = new List<IEmployee>();
             foreach (DataRow pRow in employees.Tables[0].Rows)
             {
@@ -49,15 +50,15 @@ namespace Day4.Service
             }
             return retVal;
         }
-        public string InsertEmployee(IEmployee employee)
+        public async Task<string> InsertEmployeeAsync(IEmployee employee)
         {
-            Repository.Insert(employee);
+            await Repository.InsertAsync(employee);
             return "Success";
         }
 
-        public bool DeleteEmployee(int id)
+        public async Task<bool> DeleteEmployeeAsync(int id)
         {
-            return Repository.Delete(id);
+            return await Repository.DeleteAsync(id);
         }
 
     }

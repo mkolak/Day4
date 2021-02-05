@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using Day4.Repository.Common;
 using Day4.Model.Common;
 using System.Data;
-using Day4.Model;
 
 namespace Day4.Repository
 {
@@ -15,52 +14,53 @@ namespace Day4.Repository
     {
         private SqlConnection Connection;
 
-        public DataSet QueryAll() {
+        public async Task<DataSet> QueryAllAsync() {
             Connection = new SqlConnection("Data Source=DESKTOP-0NGMPOG;Initial Catalog=CompanyDB;Trusted_Connection=True;");
             using (Connection) {
                 //SqlCommand selectComm = new SqlCommand("SELECT * FROM Departments;", Connection);
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Employees;", Connection);
                 Connection.Open();
                 DataSet dataSet = new DataSet();
-                adapter.Fill(dataSet, "Employees");
+                await Task.Run(() => adapter.Fill(dataSet, "Employees"));             
                 return dataSet;
             }
             
         }
 
-        public DataSet QueryByStringValue (string field, string value){
+        public async Task<DataSet> QueryByStringValueAsync (string field, string value){
             Connection = new SqlConnection("Data Source=DESKTOP-0NGMPOG;Initial Catalog=CompanyDB;Trusted_Connection=True;");
             using (Connection) {
                 //SqlCommand selectComm = new SqlCommand("SELECT * FROM Departments WHERE " + field + " = " + value + ";", Connection);
                 SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Employees WHERE " + field + " = '" + value + "';", Connection);
                 Connection.Open();
                 DataSet dataSet = new DataSet();
-                adapter.Fill(dataSet, "Employees");
+                await Task.Run(() => adapter.Fill(dataSet, "Employees"));
                 return dataSet;
             }
         }
 
-        public void Insert(IEmployee employee) {
+        public async Task InsertAsync(IEmployee employee) {
             Connection = new SqlConnection("Data Source=DESKTOP-0NGMPOG;Initial Catalog=CompanyDB;Trusted_Connection=True;");
             string dataStr = "(" + employee.Id + ", '" + employee.FirstName + "', '" + employee.LastName + "', '" + employee.Department + "')";
             using (Connection) {
                 SqlCommand insertComm = new SqlCommand("INSERT INTO Employees VALUES " + dataStr + ";", Connection);
                 Connection.Open();
-                insertComm.ExecuteNonQuery();
+                await Task.Run(() => insertComm.ExecuteNonQuery());
             }
         }
 
-        public bool Delete(int id) {
+        public async Task<bool> DeleteAsync(int id) {
             Connection = new SqlConnection("Data Source=DESKTOP-0NGMPOG;Initial Catalog=CompanyDB;Trusted_Connection=True;");
             using (Connection) {
-                SqlCommand selectComm = new SqlCommand("SELECT * FROM Employees;", Connection);
+                SqlCommand selectComm = new SqlCommand("SELECT * FROM Employees WHERE EmployeeID = " + id + ";", Connection);
                 Connection.Open();
-                SqlDataReader reader = selectComm.ExecuteReader();
+                Task<SqlDataReader> readerTask = Task.Run(() => selectComm.ExecuteReader());
+                SqlDataReader reader = await readerTask;
                 if (reader.HasRows)
                 {
                     reader.Close();
                     SqlCommand deleteComm = new SqlCommand("DELETE FROM Employees WHERE EmployeeID = " + id + ";", Connection);
-                    deleteComm.ExecuteNonQuery();
+                    await Task.Run(() => deleteComm.ExecuteNonQuery());
                     return true;
                 }
                 else {

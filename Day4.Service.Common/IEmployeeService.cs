@@ -4,19 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Day4.Model.Common;
-using Day4.Model;
 
 namespace Day4.Service.Common
 {
     public interface IEmployeeService
     {
-        List<IEmployee> GetEmployees();
+        Task<List<IEmployee>> GetEmployeesAsync();
 
-        List<IEmployee> GetEmployeesByValue(string field, string value);
+        Task<List<IEmployee>> GetEmployeesByValueAsync(string field, string value);
 
-        string InsertEmployee(IEmployee employee);
+        Task<string> InsertEmployeeAsync(IEmployee employee);
 
-        bool DeleteEmployee(int id);
+        Task<bool> DeleteEmployeeAsync(int id);
 
     }
 }
