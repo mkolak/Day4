@@ -18,47 +18,24 @@ namespace Day4.Service
 
         public async Task<List<IEmployee>> GetEmployeesAsync()
         {
-            Task<DataSet> dataSetTask = Repository.QueryAllAsync();
-            DataSet employees = await dataSetTask;
-            List<IEmployee> retVal = new List<IEmployee>();
-            foreach (DataRow pRow in employees.Tables[0].Rows) {
-                retVal.Add(new Employee()
-                {
-                    Id = Convert.ToInt32(pRow.ItemArray.GetValue(0).ToString()),
-                    FirstName = pRow.ItemArray.GetValue(1).ToString(),
-                    LastName = pRow.ItemArray.GetValue(2).ToString(),
-                    Department = pRow.ItemArray.GetValue(3).ToString()
-                });
-            }
-            return retVal;
+            return await Repository.QueryAllAsync();            
         }
 
         public async Task<List<IEmployee>> GetEmployeesByValueAsync(string field, string value)
         {
-            Task<DataSet> dataSetTask = Repository.QueryByStringValueAsync(field, value);
-            DataSet employees = await dataSetTask;
-            List<IEmployee> retVal = new List<IEmployee>();
-            foreach (DataRow pRow in employees.Tables[0].Rows)
-            {
-                retVal.Add(new Employee()
-                {
-                    Id = Convert.ToInt32(pRow.ItemArray.GetValue(0).ToString()),
-                    FirstName = pRow.ItemArray.GetValue(1).ToString(),
-                    LastName = pRow.ItemArray.GetValue(2).ToString(),
-                    Department = pRow.ItemArray.GetValue(3).ToString()
-                });
-            }
-            return retVal;
+            return await Repository.QueryByStringValueAsync(field, value);
+            
         }
         public async Task<string> InsertEmployeeAsync(IEmployee employee)
         {
+            employee.Id = Guid.NewGuid();
             await Repository.InsertAsync(employee);
             return "Success";
         }
 
-        public async Task<bool> DeleteEmployeeAsync(int id)
+        public async Task<bool> DeleteEmployeeAsync(string firstName, string lastName)
         {
-            return await Repository.DeleteAsync(id);
+            return await Repository.DeleteAsync(firstName, lastName);
         }
 
     }

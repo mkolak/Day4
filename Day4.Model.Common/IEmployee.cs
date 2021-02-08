@@ -9,7 +9,7 @@ namespace Day4.Model.Common
 {
     public interface IEmployee
     {
-        int Id { get; set; }
+        Guid Id { get; set; }
 
         string FirstName { get; set; }
         string LastName { get; set; }

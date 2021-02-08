@@ -7,3 +7,12 @@ C:\Users\Matej\source\repos\Day4\Day4.Model\obj\Debug\Day4.Model.csproj.CoreComp
 C:\Users\Matej\source\repos\Day4\Day4.Model\obj\Debug\Day4.Model.csproj.CopyComplete
 C:\Users\Matej\source\repos\Day4\Day4.Model\obj\Debug\Day4.Model.dll
 C:\Users\Matej\source\repos\Day4\Day4.Model\obj\Debug\Day4.Model.pdb
+F:\Day4\Day4.Model\bin\Debug\Day4.Model.dll
+F:\Day4\Day4.Model\bin\Debug\Day4.Model.pdb
+F:\Day4\Day4.Model\bin\Debug\Day4.Model.Common.dll
+F:\Day4\Day4.Model\bin\Debug\Day4.Model.Common.pdb
+F:\Day4\Day4.Model\obj\Debug\Day4.Model.csprojAssemblyReference.cache
+F:\Day4\Day4.Model\obj\Debug\Day4.Model.csproj.CoreCompileInputs.cache
+F:\Day4\Day4.Model\obj\Debug\Day4.Model.csproj.CopyComplete
+F:\Day4\Day4.Model\obj\Debug\Day4.Model.dll
+F:\Day4\Day4.Model\obj\Debug\Day4.Model.pdb

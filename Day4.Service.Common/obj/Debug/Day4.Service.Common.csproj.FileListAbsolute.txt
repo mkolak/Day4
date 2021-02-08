@@ -9,3 +9,14 @@ C:\Users\Matej\source\repos\Day4\Day4.Service.Common\obj\Debug\Day4.Service.Comm
 C:\Users\Matej\source\repos\Day4\Day4.Service.Common\obj\Debug\Day4.Service.Common.pdb
 C:\Users\Matej\source\repos\Day4\Day4.Service.Common\bin\Debug\Day4.Model.dll
 C:\Users\Matej\source\repos\Day4\Day4.Service.Common\bin\Debug\Day4.Model.pdb
+F:\Day4\Day4.Service.Common\bin\Debug\Day4.Service.Common.dll
+F:\Day4\Day4.Service.Common\bin\Debug\Day4.Service.Common.pdb
+F:\Day4\Day4.Service.Common\bin\Debug\Day4.Model.Common.dll
+F:\Day4\Day4.Service.Common\bin\Debug\Day4.Model.dll
+F:\Day4\Day4.Service.Common\bin\Debug\Day4.Model.Common.pdb
+F:\Day4\Day4.Service.Common\bin\Debug\Day4.Model.pdb
+F:\Day4\Day4.Service.Common\obj\Debug\Day4.Service.Common.csprojAssemblyReference.cache
+F:\Day4\Day4.Service.Common\obj\Debug\Day4.Service.Common.csproj.CoreCompileInputs.cache
+F:\Day4\Day4.Service.Common\obj\Debug\Day4.Service.Common.csproj.CopyComplete
+F:\Day4\Day4.Service.Common\obj\Debug\Day4.Service.Common.dll
+F:\Day4\Day4.Service.Common\obj\Debug\Day4.Service.Common.pdb

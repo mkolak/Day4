@@ -9,3 +9,14 @@ C:\Users\Matej\source\repos\Day4\Day4.Repository.Common\obj\Debug\Day4.Repositor
 C:\Users\Matej\source\repos\Day4\Day4.Repository.Common\obj\Debug\Day4.Repository.Common.pdb
 C:\Users\Matej\source\repos\Day4\Day4.Repository.Common\bin\Debug\Day4.Model.dll
 C:\Users\Matej\source\repos\Day4\Day4.Repository.Common\bin\Debug\Day4.Model.pdb
+F:\Day4\Day4.Repository.Common\bin\Debug\Day4.Repository.Common.dll
+F:\Day4\Day4.Repository.Common\bin\Debug\Day4.Repository.Common.pdb
+F:\Day4\Day4.Repository.Common\bin\Debug\Day4.Model.Common.dll
+F:\Day4\Day4.Repository.Common\bin\Debug\Day4.Model.dll
+F:\Day4\Day4.Repository.Common\bin\Debug\Day4.Model.Common.pdb
+F:\Day4\Day4.Repository.Common\bin\Debug\Day4.Model.pdb
+F:\Day4\Day4.Repository.Common\obj\Debug\Day4.Repository.Common.csprojAssemblyReference.cache
+F:\Day4\Day4.Repository.Common\obj\Debug\Day4.Repository.Common.csproj.CoreCompileInputs.cache
+F:\Day4\Day4.Repository.Common\obj\Debug\Day4.Repository.Common.csproj.CopyComplete
+F:\Day4\Day4.Repository.Common\obj\Debug\Day4.Repository.Common.dll
+F:\Day4\Day4.Repository.Common\obj\Debug\Day4.Repository.Common.pdb

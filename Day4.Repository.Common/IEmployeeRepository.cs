@@ -11,12 +11,12 @@ namespace Day4.Repository.Common
 {
     public interface IEmployeeRepository
     {
-        Task<DataSet> QueryAllAsync();
+        Task<List<IEmployee>> QueryAllAsync();
 
-        Task<DataSet> QueryByStringValueAsync(string field, string value);
+        Task<List<IEmployee>> QueryByStringValueAsync(string field, string value);
 
         Task InsertAsync(IEmployee employee);
 
-        Task<bool> DeleteAsync(int id);
+        Task<bool> DeleteAsync(string firstName, string lastName);
     }
 }

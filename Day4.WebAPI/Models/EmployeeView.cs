@@ -1,18 +1,16 @@
-﻿using Day4.Model.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace Day4.Model
+namespace Day4.WebAPI.Models
 {
-    public class Employee : IEmployee
+    public class EmployeeView
     {
-        public Guid Id { get; set; }
-
         public string FirstName { get; set; }
+
         public string LastName { get; set; }
+
         public string Department { get; set; }
     }
 }

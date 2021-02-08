@@ -15,7 +15,7 @@ namespace Day4.Service.Common
 
         Task<string> InsertEmployeeAsync(IEmployee employee);
 
-        Task<bool> DeleteEmployeeAsync(int id);
+        Task<bool> DeleteEmployeeAsync(string firstName, string lastName);
 
     }
 }
