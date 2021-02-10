@@ -76,8 +76,7 @@ namespace Day4.Repository
                 string append = "WHERE FirstName = '" + firstName + "' AND LastName = '" + lastName + "'; ";
                 SqlCommand selectComm = new SqlCommand("SELECT * FROM Employees " + append, Connection);
                 Connection.Open();
-                Task<SqlDataReader> readerTask = Task.Run(() => selectComm.ExecuteReader());
-                SqlDataReader reader = await readerTask;
+                SqlDataReader reader = await selectComm.ExecuteReaderAsync();
                 if (reader.HasRows)
                 {
                     reader.Close();

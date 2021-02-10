@@ -15,7 +15,12 @@ namespace Day4.WebAPI.Controllers
 {
     public class EmployeeController : ApiController
     {
-        static IEmployeeService Service = new EmployeeService();
+        private IEmployeeService Service;
+
+        public EmployeeController(IEmployeeService service)
+        {
+            this.Service = service;
+        }
 
         [Route("api/employee/")]
         [HttpGet]

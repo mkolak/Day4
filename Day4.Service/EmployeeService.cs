@@ -14,7 +14,12 @@ namespace Day4.Service
 {
     public class EmployeeService : IEmployeeService
     {
-        static IEmployeeRepository Repository = new EmployeeRepository();
+        private IEmployeeRepository Repository;
+
+        public EmployeeService(IEmployeeRepository repository)
+        {
+            this.Repository = repository;
+        }
 
         public async Task<List<IEmployee>> GetEmployeesAsync()
         {
