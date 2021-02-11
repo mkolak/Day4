@@ -8,7 +8,7 @@ namespace Day4.Repository
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.Register(c => new EmployeeRepository()).As<IEmployeeRepository>();
+            builder.Register(c => new EmployeeRepository()).As<IEmployeeRepository>().InstancePerDependency();
         }
     }
 }

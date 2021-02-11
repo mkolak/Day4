@@ -9,7 +9,7 @@ namespace Day4.Service
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.Register(c => new EmployeeService(c.Resolve<IEmployeeRepository>())).As<IEmployeeService>();
+            builder.Register(c => new EmployeeService(c.Resolve<IEmployeeRepository>())).As<IEmployeeService>().InstancePerDependency();
         }
     }
 }
