@@ -13,8 +13,6 @@ namespace Day4.Repository.Common
     {
         Task<List<IEmployee>> QueryAllAsync();
 
-        Task<List<IEmployee>> QueryByStringValueAsync(string field, string value);
-
         Task InsertAsync(IEmployee employee);
 
         Task<bool> DeleteAsync(string firstName, string lastName);

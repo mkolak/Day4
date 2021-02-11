@@ -178,3 +178,5 @@ F:\Day4\Day4.WebAPI\bin\System.Runtime.CompilerServices.Unsafe.xml
 F:\Day4\Day4.WebAPI\bin\System.Threading.Tasks.Extensions.xml
 F:\Day4\Day4.WebAPI\bin\Day4.Repository.dll.config
 F:\Day4\Day4.WebAPI\bin\Day4.Service.dll.config
+F:\Day4\Day4.WebAPI\bin\Day4.Utilities.dll
+F:\Day4\Day4.WebAPI\bin\Day4.Utilities.pdb

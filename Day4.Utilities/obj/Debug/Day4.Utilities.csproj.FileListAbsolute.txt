@@ -1,0 +1,6 @@
+F:\Day4\Day4.Utilities\bin\Debug\Day4.Utilities.dll
+F:\Day4\Day4.Utilities\bin\Debug\Day4.Utilities.pdb
+F:\Day4\Day4.Utilities\obj\Debug\Day4.Utilities.csprojAssemblyReference.cache
+F:\Day4\Day4.Utilities\obj\Debug\Day4.Utilities.csproj.CoreCompileInputs.cache
+F:\Day4\Day4.Utilities\obj\Debug\Day4.Utilities.dll
+F:\Day4\Day4.Utilities\obj\Debug\Day4.Utilities.pdb

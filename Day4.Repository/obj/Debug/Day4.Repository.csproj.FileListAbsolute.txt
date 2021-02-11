@@ -42,3 +42,5 @@ F:\Day4\Day4.Repository\bin\Debug\System.Memory.xml
 F:\Day4\Day4.Repository\bin\Debug\System.Numerics.Vectors.xml
 F:\Day4\Day4.Repository\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 F:\Day4\Day4.Repository\bin\Debug\System.Threading.Tasks.Extensions.xml
+F:\Day4\Day4.Repository\bin\Debug\Day4.Utilities.dll
+F:\Day4\Day4.Repository\bin\Debug\Day4.Utilities.pdb

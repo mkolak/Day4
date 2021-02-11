@@ -11,8 +11,6 @@ namespace Day4.Service.Common
     {
         Task<List<IEmployee>> GetEmployeesAsync();
 
-        Task<List<IEmployee>> GetEmployeesByValueAsync(string field, string value);
-
         Task<string> InsertEmployeeAsync(IEmployee employee);
 
         Task<bool> DeleteEmployeeAsync(string firstName, string lastName);

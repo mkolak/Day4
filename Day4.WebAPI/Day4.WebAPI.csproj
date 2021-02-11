@@ -158,6 +158,10 @@
       <Project>{e4bd7c6a-e355-4f58-a044-000ebbf4bffb}</Project>
       <Name>Day4.Service</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Day4.Utilities\Day4.Utilities.csproj">
+      <Project>{68928d34-68bb-4b63-9401-cc2a983f5eb1}</Project>
+      <Name>Day4.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

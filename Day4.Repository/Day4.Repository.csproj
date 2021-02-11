@@ -83,6 +83,10 @@
       <Project>{dac9e65b-3c29-44a3-9c83-eea795828c84}</Project>
       <Name>Day4.Repository.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Day4.Utilities\Day4.Utilities.csproj">
+      <Project>{68928d34-68bb-4b63-9401-cc2a983f5eb1}</Project>
+      <Name>Day4.Utilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

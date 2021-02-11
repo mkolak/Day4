@@ -10,6 +10,7 @@ using Day4.Model.Common;
 using Day4.Model;
 using System.Threading.Tasks;
 using Day4.WebAPI.Models;
+using Day4.Utilities;
 
 namespace Day4.WebAPI.Controllers
 {
@@ -24,30 +25,20 @@ namespace Day4.WebAPI.Controllers
 
         [Route("api/employee/")]
         [HttpGet]
-        public async Task<HttpResponseMessage> GetAsync()
+        public async Task<HttpResponseMessage> GetByQueryAsync([FromUri] int page = 0, [FromUri] int grab = 10, [FromUri] string filter = "", [FromUri] string sort = "FirstName")
         {
+            MapQuery(page, grab, filter, sort);
             List<IEmployee> values = await Service.GetEmployeesAsync();
-            if (!values.Any()) return Request.CreateResponse(HttpStatusCode.NotFound, "Not found");
-            List<EmployeeView> returnList = new List<EmployeeView>();
-            foreach (var employee in values) {
-                returnList.Add(MapEmployee(employee));
-            }
-            return Request.CreateResponse(HttpStatusCode.OK, returnList);
-        }
+            if(!values.Any()) return Request.CreateErrorResponse(HttpStatusCode.BadRequest, "Invalid query.");
 
-        [Route("api/employee/")]
-        [HttpGet]
-        public async Task<HttpResponseMessage> GetEmployeesByPositionAsync(string position)
-        { 
-            List<IEmployee> values = await Service.GetEmployeesByValueAsync("department", position);
-
-            if (!values.Any()) return Request.CreateResponse(HttpStatusCode.NotFound, "Not found");
             List<EmployeeView> returnList = new List<EmployeeView>();
             foreach (var employee in values)
             {
                 returnList.Add(MapEmployee(employee));
             }
+               
             return Request.CreateResponse(HttpStatusCode.OK, returnList);
+            
         }
 
         [Route("api/employee/")]
@@ -55,8 +46,9 @@ namespace Day4.WebAPI.Controllers
         public async Task<HttpResponseMessage> PostAsync(EmployeeView emp)
         {
             Employee newEmployee = new Employee { FirstName = emp.FirstName, LastName = emp.LastName, Department = emp.Department };
-            return Request.CreateResponse(HttpStatusCode.OK,await Service.InsertEmployeeAsync(newEmployee));
+            return Request.CreateResponse(HttpStatusCode.OK, await Service.InsertEmployeeAsync(newEmployee));
         }
+
 
         [Route("api/employee/")]
         [HttpDelete]
@@ -71,6 +63,13 @@ namespace Day4.WebAPI.Controllers
         private EmployeeView MapEmployee(IEmployee employee) {
             return new EmployeeView { FirstName = employee.FirstName, LastName = employee.LastName, Department = employee.Department };
         }
-
+  
+        private void MapQuery(int page, int grab, string filter, string sort) {
+            Paging.PageNum = page;
+            Paging.GrabPerPage = grab;
+            Filtering.Queries = filter.Split(',').ToList<string>();
+            Sorting.Queries = sort.Split(',').ToList<string>();
+        }
+        
     }
 }

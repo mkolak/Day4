@@ -8,6 +8,7 @@ using Day4.Repository.Common;
 using Day4.Model.Common;
 using Day4.Model;
 using System.Data;
+using Day4.Utilities;
 
 namespace Day4.Repository
 {
@@ -18,33 +19,20 @@ namespace Day4.Repository
         public async Task<List<IEmployee>> QueryAllAsync() {
             Connection = new SqlConnection("Data Source=DESKTOP-0NGMPOG;Initial Catalog=CompanyDB;Trusted_Connection=True;");
             using (Connection) {
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Employees;", Connection);
+                bool error = false;
+                SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Employees " + Filtering.GenerateString()
+                    + " " + Sorting.GenerateString() + " " + Paging.GenerateString() + ";", Connection);
                 Connection.Open();
                 DataSet dataSet = new DataSet();
-                await Task.Run(() => adapter.Fill(dataSet, "Employees"));
-                List<IEmployee> retVal = new List<IEmployee>();
-                foreach (DataRow pRow in dataSet.Tables[0].Rows)
-                {
-                    retVal.Add(new Employee()
-                    {
-                        Id = Guid.Parse(pRow.ItemArray.GetValue(0).ToString()),
-                        FirstName = pRow.ItemArray.GetValue(1).ToString(),
-                        LastName = pRow.ItemArray.GetValue(2).ToString(),
-                        Department = pRow.ItemArray.GetValue(3).ToString()
-                    });
+                await Task.Run(() => {
+                    try {
+                        adapter.Fill(dataSet, "Employees");
+                    } catch {
+                        error = true;
+                    }
                 }
-                return retVal;
-            }
-            
-        }
-
-        public async Task<List<IEmployee>> QueryByStringValueAsync (string field, string value){
-            Connection = new SqlConnection("Data Source=DESKTOP-0NGMPOG;Initial Catalog=CompanyDB;Trusted_Connection=True;");
-            using (Connection) {
-                SqlDataAdapter adapter = new SqlDataAdapter("SELECT * FROM Employees WHERE " + field + " = '" + value + "';", Connection);
-                Connection.Open();
-                DataSet dataSet = new DataSet();
-                await Task.Run(() => adapter.Fill(dataSet, "Employees"));
+                );
+                if (error) return new List<IEmployee> { };
                 List<IEmployee> retVal = new List<IEmployee>();
                 foreach (DataRow pRow in dataSet.Tables[0].Rows)
                 {
@@ -59,7 +47,7 @@ namespace Day4.Repository
                 return retVal;
             }
         }
-
+        
         public async Task InsertAsync(IEmployee employee) {
             Connection = new SqlConnection("Data Source=DESKTOP-0NGMPOG;Initial Catalog=CompanyDB;Trusted_Connection=True;");
             string dataStr = "('" + employee.Id.ToString() + "', '" + employee.FirstName + "', '" + employee.LastName + "', '" + employee.Department + "')";

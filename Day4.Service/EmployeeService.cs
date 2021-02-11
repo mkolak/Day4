@@ -26,11 +26,6 @@ namespace Day4.Service
             return await Repository.QueryAllAsync();            
         }
 
-        public async Task<List<IEmployee>> GetEmployeesByValueAsync(string field, string value)
-        {
-            return await Repository.QueryByStringValueAsync(field, value);
-            
-        }
         public async Task<string> InsertEmployeeAsync(IEmployee employee)
         {
             employee.Id = Guid.NewGuid();
